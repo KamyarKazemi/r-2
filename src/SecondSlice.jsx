@@ -13,5 +13,5 @@ const secondSlice = createSlice({
   },
 });
 
-export const { handleSecond } = secondSlice.reducer;
+export const { handleSecond } = secondSlice.actions;
 export const secondReducer = secondSlice.reducer;

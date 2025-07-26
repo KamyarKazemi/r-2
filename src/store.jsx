@@ -4,8 +4,8 @@ import { secondReducer } from "./SecondSlice";
 
 const store = configureStore({
   reducer: {
-    firstOne: firstReducer,
-    secondOne: secondReducer,
+    first: firstReducer,
+    second: secondReducer,
   },
 });
 

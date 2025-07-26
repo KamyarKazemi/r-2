@@ -12,13 +12,13 @@ function Counter() {
       <div>
         <form>
           <input
-            value={firstCount}
+            value={firstCount || ""}
             type="text"
             placeholder="type the first..."
             onChange={(e) => dispatch(handleFirst(e.target.value))}
           />
           <input
-            value={secondCount}
+            value={secondCount || ""}
             type="text"
             placeholder="type the second"
             onChange={(e) => dispatch(handleSecond(e.target.value))}
