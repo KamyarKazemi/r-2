@@ -2,6 +2,7 @@ import { handleFirst } from "./FirstSlice";
 import { handleSecond } from "./SecondSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { sendNum } from "./submitThunk";
+import { getNum } from "./fetchThunk";
 
 function Counter() {
   const dispatch = useDispatch();
@@ -11,12 +12,14 @@ function Counter() {
 
   const handleFirstForm = (e) => {
     e.preventDefault();
-    dispatch(sendNum(firstCount, "first"));
+    dispatch(sendNum({ num: firstCount, path: "first" }));
+    getNum({ path: "first" });
   };
 
   const handleSecondForm = (e) => {
     e.preventDefault();
-    dispatch(sendNum(secondCount, "second"));
+    dispatch(sendNum({ num: secondCount, path: "second" }));
+    getNum({ path: "second" });
   };
 
   return (
