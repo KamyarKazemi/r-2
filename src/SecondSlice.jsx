@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { handleFirst } from "./FirstSlice";
 
 const secondSlice = createSlice({
   name: "second",
@@ -10,6 +11,11 @@ const secondSlice = createSlice({
       state.count = action.payload;
       console.log(state.count);
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(handleFirst, (state, action) => {
+      state.count;
+    });
   },
 });
 

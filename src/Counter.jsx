@@ -13,13 +13,13 @@ function Counter() {
   const handleFirstForm = (e) => {
     e.preventDefault();
     dispatch(sendNum({ num: firstCount, path: "first" }));
-    getNum({ path: "first" });
+    dispatch(getNum({ path: "first" }));
   };
 
   const handleSecondForm = (e) => {
     e.preventDefault();
     dispatch(sendNum({ num: secondCount, path: "second" }));
-    getNum({ path: "second" });
+    dispatch(getNum({ path: "second" }));
   };
 
   return (

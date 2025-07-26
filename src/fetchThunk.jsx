@@ -4,7 +4,7 @@ import axios from "axios";
 const getNum = createAsyncThunk("num/get", async ({ path }) => {
   const response = await axios.get(`http://localhost:3005/${path}`);
 
-  console.log(response.data);
+  await console.log(response.data);
 
   return response.data;
 });
