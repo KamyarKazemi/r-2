@@ -1,17 +1,30 @@
-import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement, reset } from "./CounterSlice"; // ✅ correct spelling
+import { handleFirst } from "./FirstSlice";
+import { handleSecond } from "./SecondSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 function Counter() {
   const dispatch = useDispatch();
-  const count = useSelector((state) => state.counter.value);
 
+  const firstCount = useSelector((state) => state.first.count);
+  const secondCount = useSelector((state) => state.second.count);
   return (
     <>
       <div>
-        <h1>Counter: {count}</h1>
-        <button onClick={() => dispatch(increment())}>increase</button>
-        <button onClick={() => dispatch(decrement())}>decrease</button>
-        <button onClick={() => dispatch(reset())}>reset</button>
+        <form>
+          <input
+            value={firstCount}
+            type="text"
+            placeholder="type the first..."
+            onChange={(e) => dispatch(handleFirst(e.target.value))}
+          />
+          <input
+            value={secondCount}
+            type="text"
+            placeholder="type the second"
+            onChange={(e) => dispatch(handleSecond(e.target.value))}
+          />
+          <button>submit</button>
+        </form>
       </div>
     </>
   );
